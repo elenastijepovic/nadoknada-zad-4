@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   <title>JavaScript</title>
+
+
+
+
+</head>
+
+
+
+<body>
+
+<h2>JS Kalkulator</h2>
+Prvi broj:&nbsp;<input type="text" id="br1" maxlength="7" value="0.0">
+<br><br>
+Drugi broj: <input type="text" id="br2" maxlength="7" value="0.0"><br><br>
+<select id="operacija">
+<option value="sabiranje">Sabiranje</option>
+<option value="oduzimanje">Oduzimanje</option>
+<option value="mnozenje">Mnozenje</option>
+<option value="deljenje">Deljenje</option>
+</select> 
+<input type="button" value="=" onclick="izracunaj();">
+<br><br>
+Rezultat: <input type="text" id="rez"><br><br>
+<script>
+    
+    function izracunaj(){
+        var br1=parseFloat(document.getElementById("br1").value)
+        var br2= parseFloat(document.getElementById("br2").value)
+    
+    
+        var operacija= document.getElementById("operacija").value;
+    
+        if(operacija==="sabiranje"){
+            document.getElementById("rez").value=br1+br2;
+        }
+        if(operacija==="oduzimanje"){
+            document.getElementById("rez").value=br1-br2;
+    
+        }
+        if(operacija==="mnozenje"){
+            document.getElementById("rez").value=br1*br2;
+    
+        }
+        if(operacija==="deljenje"){
+            if(br2!=0) 
+            document.getElementById("rez").value=br1/br2;
+          else {
+              document.write("Nije dozvoljeno deljenje nulom")
+             
+            }
+    
+        }
+    
+    
+    
+    
+    }
+    </script>
+
+
+
+
+
+
+
+</body>
